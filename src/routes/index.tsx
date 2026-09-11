@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 
 import Slideshow from "@/components/Slideshow.jsx";
 import JoyGallery from "@/components/JoyGallery.jsx";
@@ -9,6 +10,7 @@ import porsche3 from "@/assets/porsche-3.jpg";
 import lfc1 from "@/assets/lfc-1.jpg";
 import lfc2 from "@/assets/lfc-2.jpg";
 import lfc3 from "@/assets/lfc-3.jpg";
+import birthdaySong from "@/assets/All Night.mp3";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,8 +46,39 @@ const lfcSlides = [
 ];
 
 function Index() {
+  const [musicPlaying, setMusicPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.play().then(() => setMusicPlaying(true)).catch(() => setMusicPlaying(false));
+  }, []);
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      audio.play().then(() => setMusicPlaying(true));
+    } else {
+      audio.pause();
+      setMusicPlaying(false);
+    }
+  };
+
   return (
     <main className="min-h-screen">
+      <audio ref={audioRef} src={birthdaySong} loop preload="auto" />
+      <button
+        type="button"
+        onClick={toggleMusic}
+        aria-label={musicPlaying ? "Pause birthday music" : "Play birthday music"}
+        className="fixed right-4 top-4 z-20 rounded-full border border-accent bg-background/80 px-4 py-2 text-sm font-semibold text-accent backdrop-blur transition hover:bg-accent hover:text-accent-foreground"
+      >
+        {musicPlaying ? "♫ Music on" : "♫ Play music"}
+      </button>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <img
@@ -117,9 +150,9 @@ function Index() {
         <div className="rounded-3xl border border-border bg-card p-6 text-center card-glow sm:p-10">
           <h2 className="text-3xl text-gold sm:text-4xl">A little note</h2>
           <p className="mt-4 text-muted-foreground">
-            Joy, may your year be as smooth as a coastal drive and as loud as the Kop on a European
-            night. Thank you for being the kind of friend everyone hopes for. Enjoy every second of
-            your day. 🎂
+            Anyolo my love,nakupenda tuh sana we ngombe,i cant even express myself in words you are the best thing that has ever happened to me.
+            And if you ask me,yes id choose you in every other lifetime.Happy birthday baby.
+            May God bless you with more years to come 
           </p>
         </div>
         <p className="mt-8 text-center text-xs text-muted-foreground">Made with ❤️ for Joy</p>
