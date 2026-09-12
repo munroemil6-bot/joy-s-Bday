@@ -7,9 +7,14 @@ import heroBg from "@/assets/hero-bg.jpg";
 import porsche1 from "@/assets/porsche-1.jpg";
 import porsche2 from "@/assets/porsche-2.jpg";
 import porsche3 from "@/assets/porsche-3.jpg";
+import porsche4 from "@/assets/porsche-4.jpg";
+import porsche5 from "@/assets/porsche-5.jpg";
 import lfc1 from "@/assets/lfc-1.jpg";
 import lfc2 from "@/assets/lfc-2.jpg";
 import lfc3 from "@/assets/lfc-3.jpg";
+import liverpool from "@/assets/liverpool.jpg";
+import lfcWallpaper from "@/assets/L_F.C_.jpg";
+import salahWallpaper from "@/assets/Mo Salah _ Liverpool _ Champions League HD Wallpaper.jpg";
 import birthdaySong from "@/assets/All Night.mp3";
 
 export const Route = createFileRoute("/")({
@@ -37,12 +42,17 @@ const porscheSlides = [
   { src: porsche1, alt: "Silver Porsche on a rainy neon street", caption: "Night drives, city lights 🌃" },
   { src: porsche2, alt: "Red Porsche on a coastal road", caption: "Coast road, top down, no rush 🏁" },
   { src: porsche3, alt: "Classic vintage Porsche", caption: "Classic taste — just like you 🤍" },
+  { src: porsche4, alt: "Porsche sports car", caption: "Every angle looks good 🏎️" },
+  { src: porsche5, alt: "Porsche performance car", caption: "Made for the fast lane" },
 ];
 
 const lfcSlides = [
   { src: lfc1, alt: "Red scarves raised in a packed stadium", caption: "You'll Never Walk Alone ❤️" },
   { src: lfc2, alt: "Stadium floodlights at dusk", caption: "Matchday nights under the lights" },
   { src: lfc3, alt: "Red scarf and boots on grass", caption: "Red till the very end" },
+  { src: liverpool, alt: "Liverpool football scene", caption: "Liverpool in your heart" },
+  { src: lfcWallpaper, alt: "Liverpool Football Club wallpaper", caption: "The pride of Anfield" },
+  { src: salahWallpaper, alt: "Mohamed Salah celebrating for Liverpool", caption: "Champions League nights" },
 ];
 
 function Index() {
