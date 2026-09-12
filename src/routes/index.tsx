@@ -156,8 +156,7 @@ function Index() {
       <section id="gallery" className="mx-auto max-w-4xl px-5 py-14">
         <h2 className="text-4xl text-foreground sm:text-5xl">Joy, the moments</h2>
         <p className="mt-2 mb-6 text-muted-foreground">
-          Add your own photos to <code className="text-accent">public/joy/</code> as joy-1.jpg …
-          joy-6.jpg and they show up right here.
+          A few beautiful moments that make you unforgettable.
         </p>
         <JoyGallery />
       </section>
