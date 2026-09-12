@@ -80,7 +80,14 @@ function Index() {
 
   return (
     <main className="min-h-screen">
-      <audio ref={audioRef} src={birthdaySong} loop preload="auto" />
+      <audio
+        ref={audioRef}
+        src={birthdaySong}
+        autoPlay
+        loop
+        preload="auto"
+        playsInline
+      />
       <button
         type="button"
         onClick={toggleMusic}
